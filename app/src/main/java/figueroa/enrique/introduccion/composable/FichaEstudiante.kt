@@ -20,6 +20,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -68,6 +69,17 @@ fun FichaEstudiante() {
                     Text("Mi Ficha")
                 }
             )
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {},
+                modifier = Modifier
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+                    .padding(start = 25.dp, bottom = 10.dp)
+                    .fillMaxWidth()
+            ) {
+                Text("Limpiar")
+            }
         }
     ) { paddingValues ->
         Column(
@@ -81,24 +93,35 @@ fun FichaEstudiante() {
             TarjetaFormulario(
                 nombre,
                 carrera,
-                onNombreChange = {nuevoNombre -> nombre = nuevoNombre},
-                onCarreraChange = {nuevaCarrera -> carrera = nuevaCarrera}
+                onNombreChange = {
+                    nuevoNombre -> nombre = nuevoNombre
+                },
+                onCarreraChange = {
+                    nuevaCarrera -> carrera = nuevaCarrera
+                }
             )
             TarjetaSemestre(
                 semestre,
-                onSemestreChange = {nuevoSemestre -> semestre = nuevoSemestre}
+                onSemestreChange = {
+                    nuevoSemestre -> semestre = nuevoSemestre
+                }
             )
             TarjetaLikes(
                 likes,
-                onLikesChange = {nuevoLikes -> likes = nuevoLikes}
+                onLikesChange = {
+                    nuevoLikes -> likes = nuevoLikes
+                }
             )
-            TarjetaBoton()
         }
     }
 }
 
 @Composable
-fun TarjetaPerfil(nombre: String, semestre: Int, carrera: String) {
+fun TarjetaPerfil(
+    nombre: String,
+    semestre: Int,
+    carrera: String
+) {
     //Tarjeta Perfil
     Card(
         modifier = Modifier
@@ -185,7 +208,10 @@ fun TarjetaFormulario(
 }
 
 @Composable
-fun TarjetaSemestre(semestre: Int, onSemestreChange: (Int) -> Unit) {
+fun TarjetaSemestre(
+    semestre: Int,
+    onSemestreChange: (Int) -> Unit
+) {
     //Selector de semestre
     Column(
         modifier = Modifier
@@ -222,7 +248,10 @@ fun TarjetaSemestre(semestre: Int, onSemestreChange: (Int) -> Unit) {
 }
 
 @Composable
-fun TarjetaLikes(likes: Int, onLikesChange: (Int) -> Unit) {
+fun TarjetaLikes(
+    likes: Int,
+    onLikesChange: (Int) -> Unit
+) {
     //Likes
     Column(
         modifier = Modifier
@@ -273,18 +302,6 @@ fun TarjetaLikes(likes: Int, onLikesChange: (Int) -> Unit) {
                 )
             }
         }
-    }
-}
-
-@Composable
-fun TarjetaBoton() {
-    Button(
-        onClick = {},
-        modifier = Modifier
-            .padding(horizontal = 16.dp, vertical = 8.dp)
-            .fillMaxWidth()
-    ) {
-        Text("Limpiar")
     }
 }
 

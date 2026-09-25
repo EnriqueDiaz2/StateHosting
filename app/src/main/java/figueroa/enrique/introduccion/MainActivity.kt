@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import figueroa.enrique.introduccion.composable.ContadorCafe
+import figueroa.enrique.introduccion.composable.FichaAlumno
 import figueroa.enrique.introduccion.composable.FichaEstudiante
 
 class MainActivity : ComponentActivity() {
@@ -33,7 +34,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             //Greeting(name = "Compose")
             //ContadorCafe()
-            FichaEstudiante()
+            //FichaEstudiante()
+            FichaAlumno()
         }
     }
 }
@@ -148,5 +150,6 @@ fun GreetingPreview() {
     //Boton()
     //ContadorApp()
     //ContadorCafe()
-    FichaEstudiante()
+    //FichaEstudiante()
+    FichaAlumno()
 }
